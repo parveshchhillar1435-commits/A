@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For My Special One ❤️</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Segoe UI", sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+      background: linear-gradient(135deg, #b77b93, #c98aa0, #d79caf);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      position: relative;
+      padding: 20px;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.08);
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1000px;
+      padding: 30px 18px;
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(8px);
+    }
+
+    h1 {
+      font-size: 4rem;
+      line-height: 1.2;
+      margin-bottom: 18px;
+      text-shadow: 0 0 16px rgba(255,255,255,0.65);
+      font-weight: 800;
+    }
+
+    .name {
+      opacity: 0.9;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      margin-bottom: 28px;
+      color: #fff4f8;
+    }
+
+    .quote-box {
+      margin: 0 auto 40px;
+      padding: 28px 20px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.12);
+      min-height: 110px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #fff9fb;
+      box-shadow: inset 0 0 30px rgba(255, 192, 203, 0.08);
+    }
+
+    .button-row {
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+      flex-wrap: wrap;
+      margin-bottom: 22px;
+    }
+
+    .btn {
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 18px 34px;
+      background: #ffffff;
+      color: #e75480;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      min-width: 270px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px) scale(1.03);
+    }
+
+    .message-box,
+    .reasons-box,
+    .result-box {
+      display: none;
+      margin: 18px auto 0;
+      max-width: 760px;
+      background: rgba(255,255,255,0.12);
+      border-radius: 22px;
+      padding: 22px 20px;
+      line-height: 1.8;
+      color: #fff8fb;
+      animation: fadeIn 0.7s ease;
+    }
+
+    .reasons-box ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .reasons-box li {
+      margin: 10px 0;
+      font-size: 1rem;
+    }
+
+    .love-question {
+      margin-top: 28px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #fff6f9;
+    }
+
+    .yes-no-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 700px;
+      margin: 22px auto 0;
+      min-height: 170px;
+    }
+
+    .yes-btn,
+    .no-btn {
+      position: absolute;
+      border: none;
+      border-radius: 999px;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 16px 28px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      min-width: 140px;
+    }
+
+    .yes-btn {
+      left: 32%;
+      top: 35px;
+      background: #ffffff;
+      color: #e75480;
+      z-index: 2;
+    }
+
+    .no-btn {
+      left: 56%;
+      top: 35px;
+      background: #ffe5ec;
+      color: #d94f70;
+      z-index: 3;
+    }
+
+    .timer {
+      margin-top: 34px;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff4f8;
+    }
+
+    .small {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: #fff0f5;
+    }
+
+    .footer-love {
+      margin-top: 28px;
+      font-size: 0.95rem;
+      color: #fff4f8;
+    }
+
+    .heart {
+      position: fixed;
+      bottom: -20px;
+      color: #ffd6e0;
+      animation: floatUp linear infinite;
+      opacity: 0.85;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0;
+      }
+      20% {
+        opacity: 0.9;
+      }
+      100% {
+        transform: translateY(-110vh) scale(1.8);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .btn {
+        min-width: 240px;
+        width: 100%;
+        max-width: 320px;
+      }
+
+      .yes-no-wrap {
+        min-height: 210px;
+      }
+
+      .yes-btn {
+        left: 16%;
+        top: 30px;
+      }
+
+      .no-btn {
+        left: 52%;
+        top: 100px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .subtitle,
+      .quote-box,
+      .message-box,
+      .reasons-box,
+      .result-box,
+      .timer,
+      .small,
+      .footer-love {
+        font-size: 0.95rem;
+      }
+
+      .yes-btn,
+      .no-btn {
+        min-width: 120px;
+        padding: 14px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <div class="container">
+    <h1>I Like U ❤️ <span class="name">Anju</span></h1>
+    <p class="subtitle">A little surprise made just for you ✨</p>
+
+    <div class="quote-box" id="quoteBox">
+      Every moment with you feels soft, sweet, and special.
+    </div>
+
+    <div class="button-row">
+      <button class="btn" onclick="revealMessage()">Click to Reveal My Heart 💌</button>
+      <button class="btn" onclick="showReasons()">Why I Like You ❤️</button>
+    </div>
+
+    <div class="message-box" id="hiddenMessage">
+      Anju,<br><br>
+      I don’t know when it happened, but somewhere between the little moments,
+      the smiles, and the thoughts of you, you became really special to me.<br><br>
+      I just wanted to say something from my heart...<br>
+      <b>I like you a lot ❤️</b>
+    </div>
+
+    <div class="reasons-box" id="reasonsBox">
+      <ul>
+        <li>❤️ Your smile makes everything feel lighter</li>
+        <li>❤️ Your presence makes ordinary moments special</li>
+        <li>❤️ You have a softness that stays in my heart</li>
+        <li>❤️ Thinking about you makes me smile for no reason</li>
+        <li>❤️ And honestly... I just like you for being you</li>
+      </ul>
+    </div>
+
+    <div class="love-question">Do You Like Me? 😉</div>
+
+    <div class="yes-no-wrap" id="yesNoWrap">
+      <button class="yes-btn" id="yesBtn" onclick="sendYes()">YES ❤️</button>
+      <button class="no-btn" id="noBtn" onmouseover="moveNoButton()" onclick="moveNoButton()">NO 😅</button>
+    </div>
+
+    <div class="result-box" id="resultBox">
+      You just made my day the happiest one ❤️
+    </div>
+
+    <div class="timer" id="loveTimer"></div>
+    <div class="small">Counting the time since you became special to me 💖</div>
+
+    <div class="footer-love">Made with love, just for you 🌹</div>
+  </div>
+
+  <script>
+    const quotes = [
+      "Every moment with you feels soft, sweet, and special.",
+      "You make ordinary days feel magical.",
+      "My heart gets happy whenever I think of you.",
+      "You are the smile I never want to lose.",
+      "Some people are beautiful outside, but you are beautiful everywhere.",
+      "If I had one wish, it would be more moments with you."
+    ];
+
+    let q = 0;
+    setInterval(() => {
+      q = (q + 1) % quotes.length;
+      document.getElementById("quoteBox").innerText = quotes[q];
+    }, 3000);
+
+    function revealMessage() {
+      const msg = document.getElementById("hiddenMessage");
+      msg.style.display = "block";
+      msg.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+
+    function showReasons() {
+      const box = document.getElementById("reasonsBox");
+      box.style.display = "block";
+      box.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+
+    function moveNoButton() {
+      const wrap = document.getElementById("yesNoWrap");
+      const noBtn = document.getElementById("noBtn");
+
+      const wrapRect = wrap.getBoundingClientRect();
+      const btnWidth = noBtn.offsetWidth;
+      const btnHeight = noBtn.offsetHeight;
+
+      const maxX = wrap.clientWidth - btnWidth - 10;
+      const maxY = wrap.clientHeight - btnHeight - 10;
+
+      const newX = Math.floor(Math.random() * Math.max(maxX, 20));
+      const newY = Math.floor(Math.random() * Math.max(maxY, 20));
+
+      noBtn.style.left = newX + "px";
+      noBtn.style.top = newY + "px";
+    }
+
+    function sendYes() {
+      document.getElementById("resultBox").style.display = "block";
+
+      const phoneNumber = "919650689106";
+      const message = "Yes I like you too ❤️";
+      const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+      setTimeout(() => {
+        window.location.href = whatsappURL;
+      }, 800);
+    }
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (14 + Math.random() * 22) + "px";
+      heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 8000);
+    }
+
+    setInterval(createHeart, 320);
+
+    const specialDate = new Date("2026-02-14T00:00:00");
+
+    function updateTimer() {
+      const now = new Date();
+      const diff = now - specialDate;
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("loveTimer").innerText =
+        `Since you became special: ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+    }
+
+    setInterval(updateTimer, 1000);
+    updateTimer();
+  </script>
+</body>
+</html>
