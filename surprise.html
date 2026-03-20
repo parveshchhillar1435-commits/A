@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Good Morning Ms. Sanjana Ji ☁️</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg1: #dbeafe;
+      --bg2: #e0f2fe;
+      --bg3: #f8fafc;
+      --card: rgba(255, 255, 255, 0.22);
+      --text-dark: #1e293b;
+      --text-soft: #475569;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --white: #ffffff;
+      --border: rgba(255, 255, 255, 0.35);
+      --shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+    }
+
+    body {
+      font-family: "Segoe UI", sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+      background: linear-gradient(135deg, var(--bg1), var(--bg2), var(--bg3));
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      position: relative;
+      color: var(--text-dark);
+    }
+
+    .sky {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .cloud {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.75);
+      border-radius: 999px;
+      filter: blur(1px);
+      box-shadow: 20px 10px 30px rgba(255,255,255,0.35);
+      animation: drift linear infinite;
+    }
+
+    .cloud::before,
+    .cloud::after {
+      content: "";
+      position: absolute;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 50%;
+    }
+
+    .cloud1 {
+      width: 190px;
+      height: 60px;
+      top: 10%;
+      left: -220px;
+      animation-duration: 34s;
+    }
+
+    .cloud1::before {
+      width: 70px;
+      height: 70px;
+      left: 25px;
+      top: -28px;
+    }
+
+    .cloud1::after {
+      width: 90px;
+      height: 90px;
+      left: 80px;
+      top: -40px;
+    }
+
+    .cloud2 {
+      width: 240px;
+      height: 72px;
+      top: 24%;
+      left: -260px;
+      animation-duration: 42s;
+      animation-delay: 4s;
+    }
+
+    .cloud2::before {
+      width: 90px;
+      height: 90px;
+      left: 35px;
+      top: -35px;
+    }
+
+    .cloud2::after {
+      width: 110px;
+      height: 110px;
+      left: 105px;
+      top: -48px;
+    }
+
+    .cloud3 {
+      width: 170px;
+      height: 55px;
+      top: 58%;
+      left: -200px;
+      animation-duration: 38s;
+      animation-delay: 8s;
+    }
+
+    .cloud3::before {
+      width: 65px;
+      height: 65px;
+      left: 20px;
+      top: -24px;
+    }
+
+    .cloud3::after {
+      width: 85px;
+      height: 85px;
+      left: 70px;
+      top: -34px;
+    }
+
+    .cloud4 {
+      width: 220px;
+      height: 68px;
+      top: 75%;
+      left: -260px;
+      animation-duration: 48s;
+      animation-delay: 2s;
+      opacity: 0.8;
+    }
+
+    .cloud4::before {
+      width: 85px;
+      height: 85px;
+      left: 28px;
+      top: -32px;
+    }
+
+    .cloud4::after {
+      width: 100px;
+      height: 100px;
+      left: 100px;
+      top: -42px;
+    }
+
+    @keyframes drift {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(calc(100vw + 420px));
+      }
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 920px;
+      padding: 34px 24px;
+      border-radius: 30px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.55);
+      color: #334155;
+      font-size: 0.92rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+      letter-spacing: 0.3px;
+    }
+
+    h1 {
+      font-size: 3.4rem;
+      line-height: 1.15;
+      margin-bottom: 12px;
+      font-weight: 800;
+      color: #0f172a;
+      text-shadow: 0 2px 14px rgba(255,255,255,0.4);
+    }
+
+    .highlight {
+      color: var(--accent);
+    }
+
+    .subtitle {
+      max-width: 700px;
+      margin: 0 auto 28px;
+      font-size: 1.08rem;
+      color: var(--text-soft);
+      line-height: 1.7;
+    }
+
+    .morning-box {
+      max-width: 760px;
+      margin: 0 auto 26px;
+      padding: 26px 22px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.35);
+      border: 1px solid rgba(255,255,255,0.4);
+      box-shadow: inset 0 0 24px rgba(255,255,255,0.16);
+    }
+
+    .line {
+      font-size: 1.07rem;
+      color: #334155;
+      line-height: 1.9;
+    }
+
+    .quote-slider {
+      margin-top: 16px;
+      font-size: 1rem;
+      color: #1e3a8a;
+      font-weight: 600;
+      min-height: 28px;
+      transition: opacity 0.3s ease;
+    }
+
+    .button-row {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin: 28px 0 18px;
+    }
+
+    .btn {
+      border: none;
+      border-radius: 999px;
+      padding: 16px 28px;
+      min-width: 240px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 700;
+      transition: all 0.25s ease;
+      box-shadow: 0 12px 28px rgba(37, 99, 235, 0.14);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-light {
+      background: rgba(255,255,255,0.85);
+      color: #1e293b;
+    }
+
+    .btn-light:hover {
+      transform: translateY(-2px);
+      background: white;
+    }
+
+    .hidden-box,
+    .plan-box,
+    .sent-box {
+      display: none;
+      margin: 18px auto 0;
+      max-width: 760px;
+      padding: 24px 20px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.36);
+      border: 1px solid rgba(255,255,255,0.45);
+      animation: fadeIn 0.5s ease;
+    }
+
+    .hidden-box p,
+    .plan-box p,
+    .sent-box p {
+      color: #334155;
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    .plan-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 10px;
+    }
+
+    textarea {
+      width: 100%;
+      margin-top: 16px;
+      border: none;
+      outline: none;
+      border-radius: 18px;
+      padding: 16px 18px;
+      font-size: 1rem;
+      min-height: 140px;
+      resize: vertical;
+      background: rgba(255,255,255,0.9);
+      color: #1e293b;
+      box-shadow: inset 0 2px 8px rgba(15, 23, 42, 0.08);
+    }
+
+    textarea::placeholder {
+      color: #64748b;
+    }
+
+    .send-btn {
+      margin-top: 16px;
+      border: none;
+      border-radius: 999px;
+      background: #22c55e;
+      color: white;
+      padding: 15px 28px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
+
+    .send-btn:hover {
+      background: #16a34a;
+      transform: translateY(-2px);
+    }
+
+    .footer-note {
+      margin-top: 26px;
+      color: #475569;
+      font-size: 0.95rem;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.35rem;
+      }
+
+      .container {
+        padding: 26px 16px;
+      }
+
+      .btn {
+        width: 100%;
+        min-width: unset;
+        max-width: 320px;
+      }
+
+      .subtitle,
+      .line,
+      .hidden-box p,
+      .plan-box p,
+      .sent-box p,
+      textarea {
+        font-size: 0.96rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .badge {
+        font-size: 0.82rem;
+      }
+
+      .plan-title {
+        font-size: 1.15rem;
+      }
+
+      textarea {
+        min-height: 120px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="sky">
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+    <div class="cloud cloud4"></div>
+  </div>
+
+  <div class="container">
+    <div class="badge">☁️ A soft little morning surprise</div>
+
+    <h1>Good Morning <span class="highlight">Ms. Sanjana Ji</span> 🌤️</h1>
+
+    <p class="subtitle">
+      Wishing you a peaceful, beautiful, and happy day ahead.
+      Just a small surprise to make your morning feel a little more special.
+    </p>
+
+    <div class="morning-box">
+      <div class="line">
+        May your day start with calm thoughts, a fresh smile, and lots of good energy ✨
+      </div>
+      <div class="quote-slider" id="quoteSlider">
+        Hope today brings you peace, happiness, and lovely moments.
+      </div>
+    </div>
+
+    <div class="button-row">
+      <button class="btn btn-primary" onclick="showMorningMessage()">Open Morning Wish 💌</button>
+      <button class="btn btn-light" onclick="showPlanBox()">What’s Your Plan Today? ☁️</button>
+    </div>
+
+    <div class="hidden-box" id="morningMessage">
+      <p>
+        Good morning Ms. Sanjana Ji,<br><br>
+        Bas itna kehna tha ki aaj ka din aapke liye bahut accha ho.
+        Aap hamesha smile karti raho, khush raho, aur jo bhi aaj plan ho
+        woh smoothly aur beautifully complete ho jaye.<br><br>
+        Aaj ka din calm ho, productive ho, aur aapke liye thoda extra special bhi ✨
+      </p>
+    </div>
+
+    <div class="plan-box" id="planBox">
+      <div class="plan-title">What’s your plan today? 💭</div>
+      <p>
+        I’d love to know what your day looks like today.
+      </p>
+      <textarea
+        id="planInput"
+        placeholder="Type your plan here... for example: classes, work, outing, rest, shopping, etc."
+      ></textarea>
+      <button class="send-btn" onclick="sendPlanToWhatsApp()">Send Reply on WhatsApp</button>
+    </div>
+
+    <div class="sent-box" id="sentBox">
+      <p>
+        Your reply is being sent to WhatsApp 💙
+      </p>
+    </div>
+
+    <div class="footer-note">
+      Made with care, just to make her morning feel a little better 🌥️
+    </div>
+  </div>
+
+  <script>
+    const quotes = [
+      "Hope today brings you peace, happiness, and lovely moments.",
+      "A calm morning can make the whole day beautiful.",
+      "May your day be light, smooth, and full of good vibes.",
+      "Wishing you a fresh start and a happy heart today.",
+      "Some mornings deserve a sweet smile and soft thoughts."
+    ];
+
+    let currentQuote = 0;
+    const quoteSlider = document.getElementById("quoteSlider");
+
+    setInterval(() => {
+      currentQuote = (currentQuote + 1) % quotes.length;
+      quoteSlider.style.opacity = "0";
+      setTimeout(() => {
+        quoteSlider.innerText = quotes[currentQuote];
+        quoteSlider.style.opacity = "1";
+      }, 250);
+    }, 3200);
+
+    function showMorningMessage() {
+      const box = document.getElementById("morningMessage");
+      box.style.display = "block";
+      box.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+
+    function showPlanBox() {
+      const box = document.getElementById("planBox");
+      box.style.display = "block";
+      box.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+
+    function sendPlanToWhatsApp() {
+      const plan = document.getElementById("planInput").value.trim();
+
+      if (!plan) {
+        alert("Please write your plan first 😊");
+        return;
+      }
+
+      document.getElementById("sentBox").style.display = "block";
+
+      const phoneNumber = "919650689106"; 
+      const message =
+`Good Morning ☀️
+Ms. Sanjana Ji's plan for today:
+
+${plan}`;
+
+      const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+      setTimeout(() => {
+        window.location.href = whatsappURL;
+      }, 700);
+    }
+  </script>
+</body>
+</html>
